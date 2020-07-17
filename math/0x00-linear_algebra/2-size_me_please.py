@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""task 2 function to determine matrix shape"""
 
 
 def matrix_shape(mat):
