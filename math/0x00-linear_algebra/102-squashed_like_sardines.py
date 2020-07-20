@@ -9,16 +9,11 @@ def cat_matrices(mat1, mat2, axis=0):
     curMat1 = mat1
     curMat2 = mat2
     while not isinstance(curMat1, int):
-        """if not isinstance(curMat2[0], type(curMat1[0])):
-            return None
-        elif isinstance(curMat1[0], int) and len(curMat1) != len(curMat2):
-            if axis % 2 != 0:
-                return None"""
         if isinstance(curMat1[0], int) and len(curMat1) != len(curMat2):
-            if axis % 2:
+            if axis % 2 == 0:
                 return None
         elif isinstance(curMat1[0], list) and isinstance(curMat1[0][0], int):
-            if len(curMat1) != len(curMat2) and not axis % 2:
+            if len(curMat1) != len(curMat2) and axis % 2 != 0:
                 return None
         elif not isinstance(curMat2[0], type(curMat1[0])):
             return None
