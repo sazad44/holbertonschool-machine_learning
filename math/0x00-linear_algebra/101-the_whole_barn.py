@@ -4,7 +4,7 @@
 
 def add_matrices(mat1, mat2):
     """add matrices of the same shape"""
-    if len(mat1) != len(mat2) or isinstance(mat1[0], type(mat2[0])):
+    if len(mat1) != len(mat2) or not isinstance(mat1[0], type(mat2[0])):
         return None
     newMat = []
     for mat in range(len(mat1)):
