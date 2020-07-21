@@ -14,4 +14,3 @@ plt.title('Exponential Decay of C-14')
 plt.xlabel('Time (years)')
 plt.ylabel('Fraction Remaining')
 plt.show()
-
