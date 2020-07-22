@@ -43,7 +43,10 @@ ax[1, 0].set_xlabel('Time (years)', fontsize='x-small')
 ax[1, 0].set_ylabel('Fraction Remaining', fontsize='x-small')
 ax[1, 1].plot(x3, y31, 'r--')
 ax[1, 1].plot(x3, y32, 'g')
-ax[1, 1].set_title('Exponential Decay of Radioactive Elements', fontsize='x-small')
+ax[1, 1].set_title(
+    'Exponential Decay of Radioactive Elements',
+    fontsize='x-small'
+)
 ax[1, 1].set_ylim(0, 1)
 ax[1, 1].set_xlim(0, 20000)
 ax[1, 1].legend(('C-14', 'Ra-226'), fontsize='x-small')
