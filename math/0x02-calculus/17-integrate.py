@@ -23,4 +23,6 @@ def poly_integral(poly, C=0):
             newPoly.append(int(appVal))
         else:
             newPoly.append(appVal)
+    if newPoly[:-1] == 0:
+        newPoly = newPoly[:-1]
     return newPoly
