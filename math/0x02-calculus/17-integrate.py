@@ -10,10 +10,8 @@ def poly_integral(poly, C=0):
     ) or len(
         poly
     ) == 0 or not isinstance(
-        C, (
-            float,
-            int
-        )
+        C,
+        int
     ):
         return None
     newPoly = [C]
@@ -26,5 +24,6 @@ def poly_integral(poly, C=0):
     x = 1
     while newPoly[-x] == 0:
         x += 1
-    if x > 1: newPoly = newPoly[:-(x - 1)]
+    if x > 1:
+        newPoly = newPoly[:-(x - 1)]
     return newPoly
