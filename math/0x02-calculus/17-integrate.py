@@ -7,7 +7,9 @@ def poly_integral(poly, C=0):
     if not isinstance(
             poly,
             list
-    ) or not isinstance(
+    ) or len(
+        poly
+    ) == 0 or not isinstance(
         C, (
             float,
             int
@@ -21,6 +23,8 @@ def poly_integral(poly, C=0):
             newPoly.append(int(appVal))
         else:
             newPoly.append(appVal)
-    if newPoly[:-1] == 0:
-        newPoly = newPoly[:-1]
+    x = 1
+    while newPoly[-x] == 0:
+        x += 1
+    if x > 1: newPoly = newPoly[:-(x - 1)]
     return newPoly
