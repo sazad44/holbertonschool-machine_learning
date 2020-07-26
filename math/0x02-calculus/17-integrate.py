@@ -21,14 +21,6 @@ def poly_integral(poly, C=0):
             newPoly.append(int(appVal))
         else:
             newPoly.append(appVal)
-    try:
-        x = 1
-        while newPoly[-x] == 0:
-            x += 1
-        if x > 1:
-            newPoly = newPoly[:-(x - 1)]
-    except:
-        pass
     if sum(newPoly) == 0:
         return [0]
     return newPoly
