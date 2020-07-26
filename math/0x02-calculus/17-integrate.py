@@ -7,13 +7,11 @@ def poly_integral(poly, C=0):
     if not isinstance(
             poly,
             list
-    ) or len(
-        poly
-    ) == 0 or not isinstance(
-            C, (
-                float,
-                int
-            )
+    ) or not isinstance(
+        C, (
+            float,
+            int
+        )
     ):
         return None
     newPoly = [C]
