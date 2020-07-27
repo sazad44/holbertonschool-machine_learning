@@ -23,4 +23,9 @@ def poly_integral(poly, C=0):
             newPoly.append(appVal)
     if sum(newPoly) == 0:
         return [0]
+    cutoff = 1
+    while newPoly[-cutoff] == 0:
+        cutoff += 1
+    if newPoly[-1] == 0:
+        newPoly = newPoly[:-(cutoff - 1)]
     return newPoly
