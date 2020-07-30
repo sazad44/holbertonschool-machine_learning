@@ -25,10 +25,10 @@ class Poisson():
         """calculates value of PMF for given successes"""
         if not isinstance(k, int):
             k = int(k)
+        if k < 0:
+            return 0
         denom = 1
         for i in range(k, 1, -1):
             denom *= i
         pmfValue = ((self.e**(-self.lambtha))*(self.lambtha**k)) / denom
-        if pmfValue < 0 or pmfValue > 1:
-            return 0
         return pmfValue
