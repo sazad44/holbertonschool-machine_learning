@@ -13,7 +13,7 @@ class Poisson():
                 self.lambtha = lambtha
         else:
             if not isinstance(data, list):
-                raise ValueError("data must be a list")
+                raise TypeError("data must be a list")
             elif len(data) < 2:
                 raise ValueError("data must contain multiple values")
             else:
