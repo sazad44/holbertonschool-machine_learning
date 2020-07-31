@@ -6,6 +6,8 @@ class Normal():
     """class to represent Normal distribution"""
     def __init__(self, data=None, mean=0., stddev=1.):
         """initialization function for class"""
+        self.e = 2.7182818285
+        self.pi = 3.141592653
         if data is None:
             if stddev <= 0:
                 raise ValueError("stddev must be a positive value")
@@ -29,3 +31,25 @@ class Normal():
     def x_value(self, z):
         """calculates x-value of given z-score"""
         return self.mean + self.stddev * z
+
+    def pdf(self, x):
+        """calculates pdf of distribution based on x-value"""
+        return (
+            self.e ** (
+                -(
+                    (
+                        x - self.mean
+                    ) ** 2
+                ) / (
+                    2 * (
+                        self.stddev ** 2
+                    )
+                )
+            )
+        ) / (
+            self.stddev * (
+                (
+                    2 * self.pi
+                ) ** .5
+            )
+        )
