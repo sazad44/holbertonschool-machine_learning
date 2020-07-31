@@ -26,5 +26,5 @@ class Binomial():
                 variance += (mean - d) ** 2
             variance = variance / len(data)
             self.p = -((variance / mean) - 1)
-            self.n = int(round(mean / self.p))
+            self.n = int(mean / self.p)
             self.p = float(mean / self.n)
