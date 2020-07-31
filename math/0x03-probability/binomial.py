@@ -57,3 +57,14 @@ class Binomial():
                 self.n - k
             )
         )
+
+    def cdf(self, k):
+        """calculates cdf value based on k successes"""
+        if not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+        cdfValue = 0
+        for i in range(k + 1):
+            cdfValue += self.pmf(i)
+        return cdfValue
