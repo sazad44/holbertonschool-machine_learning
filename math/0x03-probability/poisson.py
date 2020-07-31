@@ -32,3 +32,14 @@ class Poisson():
             denom *= i
         pmfValue = ((self.e**(-self.lambtha))*(self.lambtha**k)) / denom
         return pmfValue
+
+    def cdf(self, k):
+        """calculates value f CDF for given no of successes"""
+        if not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+        cdfValue = 0
+        for i in range(k + 1):
+            cdfValue += self.pmf(i)
+        return cdfValue
