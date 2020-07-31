@@ -13,4 +13,3 @@ print('Lambtha:', p2.lambtha)
 
 p3 = Poisson(lambtha=0)
 print('Lambtha:', p3.lambtha)
-
