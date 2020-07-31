@@ -11,9 +11,9 @@ class Binomial():
         if data is None:
             if n <= 0:
                 raise ValueError("n must be a positive value")
-            self.n = int(n)
             if p < 0 or p > 1:
                 raise ValueError("p must be greater than 0 and less than 1")
+            self.n = int(n)
             self.p = float(p)
         else:
             if not isinstance(data, list):
@@ -25,7 +25,7 @@ class Binomial():
             for d in data:
                 variance += (mean - d) ** 2
             variance = variance / len(data)
-            self.p = 1 - (variance / mean)
+            self.p = float(1 - (variance / mean))
             self.n = int(round(mean / self.p))
             self.p = float(mean / self.n)
 
