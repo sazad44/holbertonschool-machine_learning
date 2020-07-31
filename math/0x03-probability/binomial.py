@@ -22,5 +22,5 @@ class Binomial():
                 raise ValueError("data must contain multiple values")
             mean = sum(data) / len(data)
             self.p = mean / (len(data) / 2)
-            self.n = int(mean / self.p)
+            self.n = int(round(mean / self.p))
             self.p = float(mean / self.n)
