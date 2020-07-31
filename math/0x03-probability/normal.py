@@ -7,7 +7,7 @@ class Normal():
     def __init__(self, data=None, mean=0., stddev=1.):
         """initialization function for class"""
         self.e = 2.7182818285
-        self.pi = 3.141592653
+        self.pi = 3.1415926536
         if data is None:
             if stddev <= 0:
                 raise ValueError("stddev must be a positive value")
@@ -60,14 +60,54 @@ class Normal():
         erfx = (
             2 / self.pi ** .5
         ) * (
-            sub - (
-                sub ** 3 / 3
-            ) + (
-                sub ** 5 / 10
+            (
+                (
+                    x - self.mean
+                ) / (
+                    self.stddev * (
+                        2 ** .5
+                    )
+                )
             ) - (
-                sub ** 7 / 42
+                (
+                    (
+                        x - self.mean
+                    ) / (
+                        self.stddev * (
+                            2 ** .5
+                        )
+                    )
+                ) ** 3 / 3
             ) + (
-                sub ** 9 / 216
+                (
+                    (
+                        x - self.mean
+                    ) / (
+                        self.stddev * (
+                            2 ** .5
+                        )
+                    )
+                ) ** 5 / 10
+            ) - (
+                (
+                    (
+                        x - self.mean
+                    ) / (
+                        self.stddev * (
+                            2 ** .5
+                        )
+                    )
+                ) ** 7 / 42
+            ) + (
+                (
+                    (
+                        x - self.mean
+                    ) / (
+                        self.stddev * (
+                            2 ** .5
+                        )
+                    )
+                ) ** 9 / 216
             )
         )
         return (erfx + 1) / 2
