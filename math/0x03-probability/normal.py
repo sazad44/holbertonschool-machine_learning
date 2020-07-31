@@ -21,3 +21,11 @@ class Normal():
             for d in data:
                 sumOfDiffS += (d - self.mean) ** 2
             self.stddev = (sumOfDiffS / len(data)) ** (1/2)
+
+    def z_score(self, x):
+        """calculates z-score of given x-value"""
+        return (x - self.mean) / self.stddev
+
+    def x_value(self, z):
+        """calculates x-value of given z-score"""
+        return self.mean + self.stddev * z
