@@ -32,21 +32,7 @@ class Neuron():
 
     def forward_prop(self, X):
         """forward propagation func for Neuron"""
-        actVals = [[]]
-        for r in range(len(X[0])):
-            wColSum = 0
-            for d in range(len(X)):
-                wColSum += X[d][r] * self.__W[0][d]
-            actVals[0].append(
-                "{:.8e}".format(
-                    1 / (
-                        1 + np.exp(
-                            -1 * (
-                                wColSum + self.__b
-                            )
-                        )
-                    )
-                )
-            )
+        matmul = np.matmul(self.__W, X)
+        actVals = 1 / (1 + np.exp(-(matmul + self.__b)))
         self.__A = actVals
         return self.__A
