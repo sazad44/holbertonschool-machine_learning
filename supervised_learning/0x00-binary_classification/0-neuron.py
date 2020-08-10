@@ -4,7 +4,7 @@ import numpy as np
 
 
 class Neuron():
-    """Neuron Class to define a single neuron performing binary classification"""
+    """Neuron Class to define a single neuron performing classification"""
     def __init__(self, nx):
         """initialization function for class"""
         if not isinstance(nx, int):
